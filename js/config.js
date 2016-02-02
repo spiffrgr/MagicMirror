@@ -42,7 +42,7 @@ var config = {
         urls: [
 		{
 			symbol: 'calendar-plus-o', 
-			url: 'https://calendar.google.com/calendar/embed?src=ru8880ehe7utru9kgutkflr8q0%40group.calendar.google.com&ctz=Europe/Madrid'
+			url: 'https://calendar.google.com/calendar/ical/ru8880ehe7utru9kgutkflr8q0%40group.calendar.google.com/public/basic.ics'
 		},
 		//{
 			//symbol: 'soccer-ball-o',
