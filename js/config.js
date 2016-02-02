@@ -1,5 +1,5 @@
 var config = {
-    lang: 'nl',
+    lang: 'ca',
     time: {
         timeFormat: 12,
         displaySeconds: true,
@@ -9,10 +9,10 @@ var config = {
         //change weather params here:
         //units: metric or imperial
         params: {
-            q: 'Baarn,Netherlands',
+            q: 'Utrecht,Netherlands',
             units: 'metric',
             // if you want a different lang for the weather that what is set above, change it here
-            lang: 'nl',
+            lang: 'ca',
             APPID: 'YOUR_FREE_OPENWEATHER_API_KEY'
         }
     },
@@ -63,6 +63,6 @@ var config = {
 		]
     },
     news: {
-        feed: 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'
+        feed: 'http://www.publico.es/rss/'
     }
 }
