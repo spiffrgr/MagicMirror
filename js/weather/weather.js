@@ -36,12 +36,12 @@ var weather = {
 }
 
 /**
- * Rounds a float to one decimal place
+ * Rounds a float to zero decimal place
  * @param  {float} temperature The temperature to be rounded
  * @return {float}             The new floating point value
  */
 weather.roundValue = function (temperature) {
-	return parseFloat(temperature).toFixed(1);
+	return parseFloat(temperature).toFixed(0);
 }
 
 /**
@@ -52,14 +52,15 @@ weather.roundValue = function (temperature) {
  */
 weather.ms2Beaufort = function(ms) {
 	var kmh = ms * 60 * 60 / 1000;
-	var speeds = [1, 5, 11, 19, 28, 38, 49, 61, 74, 88, 102, 117, 1000];
-	for (var beaufort in speeds) {
-		var speed = speeds[beaufort];
-		if (speed > kmh) {
-			return beaufort;
-		}
-	}
-	return 12;
+	//var speeds = [1, 5, 11, 19, 28, 38, 49, 61, 74, 88, 102, 117, 1000];
+	//for (var beaufort in speeds) {
+	//	var speed = speeds[beaufort];
+	//	if (speed > kmh) {
+	//		return beaufort;
+	//	}
+	//}
+	kmh = Math.round(kmh);
+	return kmh;
 }
 
 /**
@@ -90,7 +91,7 @@ weather.updateCurrentWeather = function () {
 				_sunrise = moment(data.sys.sunrise*1000).format('HH:mm'),
 				_sunset = moment(data.sys.sunset*1000).format('HH:mm');
 
-			var _newWindHtml = '<span class="wind"><span class="wi wi-strong-wind xdimmed"></span> ' + this.ms2Beaufort(_wind) + '</span>',
+			var _newWindHtml = '<span class="wind"><span class="wi wi-strong-wind xdimmed"></span> ' + this.ms2Beaufort(_wind) + ' kmh' + '</span>',
 				// Show both sunrise and sunset
 				//_newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '</span>';
 				_newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '<span class="sun"><span class="wi wi-sunset xdimmed"></span> ' + _sunset + '</span>';
