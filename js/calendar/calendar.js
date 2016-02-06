@@ -106,7 +106,8 @@ calendar.processEvents = function (url, events) {
 				var days = moment(dt).diff(moment(), 'days');
 				var seconds = moment(dt).diff(moment(), 'seconds');
 				var startDate = moment(dt);
-				if (seconds >= 0) {
+				if (seconds >= 0 && seconds < 60*60*24*30) {
+					// Add only events in the next 30 days
 					if (seconds <= 60*60*5 || seconds >= 60*60*24*2) {
 						var time_string = moment(dt).fromNow();
 					} else {
