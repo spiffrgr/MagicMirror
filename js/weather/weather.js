@@ -91,11 +91,13 @@ weather.updateCurrentWeather = function () {
 				_sunset = moment(data.sys.sunset*1000).format('HH:mm');
 
 			var _newWindHtml = '<span class="wind"><span class="wi wi-strong-wind xdimmed"></span> ' + this.ms2Beaufort(_wind) + '</span>',
-				_newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '</span>';
-
-			if (_sunrise < _now && _sunset > _now) {
-				_newSunHtml = '<span class="sun"><span class="wi wi-sunset xdimmed"></span> ' + _sunset + '</span>';
-			}
+				// Show both sunrise and sunset
+				//_newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '</span>';
+				_newSunHtml = '<span class="sun"><span class="wi wi-sunrise xdimmed"></span> ' + _sunrise + '<span class="sun"><span class="wi wi-sunset xdimmed"></span> ' + _sunset + '</span>';
+					
+			//if (_sunrise < _now && _sunset > _now) {
+			//	_newSunHtml = '<span class="sun"><span class="wi wi-sunset xdimmed"></span> ' + _sunset + '</span>';
+			//}
 
 			$(this.windSunLocation).updateWithText(_newWindHtml + ' ' + _newSunHtml,this.fadeInterval);
 
