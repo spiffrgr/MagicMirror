@@ -12,8 +12,8 @@ var calendar = {
 	defaultSymbol: config.calendar.defaultSymbol || 'none',
 	calendarSymbol: (typeof config.calendar.urls == 'undefined') ? config.calendar.defaultSymbol || 'none' : config.calendar.urls[0].symbol,
 	displaySymbol: (typeof config.calendar.displaySymbol == 'undefined') ? false : config.calendar.displaySymbol,
-	shortRunningText: 'still',
-	longRunningText: 'until',
+	shortRunningText: 'encara',
+	longRunningText: 'fins',
 }
 
 calendar.processEvents = function (url, events) {
