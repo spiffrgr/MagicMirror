@@ -1,7 +1,7 @@
 var config = {
     lang: 'ca',
     time: {
-        timeFormat: 12,
+        timeFormat: 24,
         displaySeconds: true,
         digitFade: false,
     },
@@ -36,7 +36,7 @@ var config = {
         ]
     },
     calendar: {
-        maximumEntries: 10, // Total Maximum Entries
+        maximumEntries: 4, // Total Maximum Entries
 		displaySymbol: true,
 		defaultSymbol: 'calendar', // Fontawsome Symbol see http://fontawesome.io/cheatsheet/
         urls: [
